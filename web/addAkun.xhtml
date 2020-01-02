@@ -1,0 +1,158 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Bejeu Admin</title>
+        <link rel="shortcut icon" type="image/x-icon" href="img/icon.png"></link>
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.css"></link>
+        <link rel="stylesheet" type="text/css" href="css/font-awesome.css"></link>
+        <link rel="stylesheet" type="text/css" href="css/AdminLTE.css"></link>
+        <link rel="stylesheet" type="text/css" href="css/kzm.css"></link>
+        <link rel="stylesheet" href="css/_all-skins.css"></link>
+    </h:head>
+    <h:body class="hold-transition skin-blue sidebar-mini">
+        <div class="wrapper">
+
+  <header class="main-header">
+    <!-- Logo -->
+    <a href="dashboard.jsp" class="logo">
+      <!-- mini logo for sidebar mini 50x50 pixels -->
+      <span class="logo-mini">BJU</span>
+      <!-- logo for regular state and mobile devices -->
+      <span class="logo-lg"><b>Bejeu</b>Bus</span>
+    </a>
+    <!-- Header Navbar: style can be found in header.less -->
+    <nav class="navbar navbar-static-top">
+      <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+        <span class="sr-only">Toggle navigation</span>
+      </a>
+      <div class="pull-left">
+      <script language="JavaScript">document.write(tanggallengkap);</script>&nbsp;-&nbsp;<div id="output" class="pull-right"></div>
+      </div>
+      <div class="pull-right">
+                  <a href="login.jsp" onclick="return confirm('Anda yakin ingin logout?')" class="btn btn-danger btn-flat">Sign Out</a>
+                </div>
+    </nav>
+  </header>
+  <!-- Left side column. contains the logo and sidebar -->
+  <aside class="main-sidebar">
+    <!-- sidebar: style can be found in sidebar.less -->
+    <section class="sidebar">
+      <ul class="sidebar-menu"> 
+        <li class="treeview">
+          <a href="dashboard.jsp">
+            <i class="fa fa-home"></i> <span>Home</span>
+            <span class="pull-right-container">
+              <span class="label label-primary pull-right"></span>
+            </span>
+          </a>
+        </li>
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-users"></i>
+            <span>Account</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i></span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="addAccount.xhtml"><i class="fa fa-plus"></i> Add Account</a></li>
+            <li><a href="akun.xhtml"><i class="fa fa-user"></i> Data Account</a></li>
+          </ul>
+        </li>
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-users"></i>
+            <span>Bus</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i></span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="addBus.xhtml"><i class="fa fa-plus"></i> Add Bus</a></li>
+            <li><a href="viewBus.xhtml"><i class="fa fa-user"></i> Data Bus</a></li>
+          </ul>
+        </li>
+        <li class="treeview">
+          <a href="viewContact.xhtml">
+            <i class="fa fa-globe"></i>
+            <span>ContactUs</span>
+          </a>
+        </li>
+      </ul>
+    </section>
+    <!-- /.sidebar -->
+  </aside>
+
+  <!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1 class="page-header">
+        Data Account
+      </h1>
+      <ul class="breadcrumb">
+        <li><a href="home"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li class="active">Data Account</li>
+      </ul>
+    </section>
+    <section class="content">
+      <div class="container-fluid">
+       
+        <h:form enctype="multipart/form-data"> 
+            
+                <h1>Service Name</h1>
+                <h:inputText value="#{galeri.caption}"/>
+            <h1>Image</h1>
+            <h:inputFile value="#{galeri.image}">
+		<f:passThroughAttribute name="accept" value="image" />
+            </h:inputFile>
+            <br/><br/>
+            <h:commandButton value="Submit" action="#{galeri.addServicelist()}"/>
+            <br/><br/>
+        </h:form>  
+           <h:outputScript>  
+        /* 
+        <![CDATA[ */  
+function handleComplete(xhr, status, args) {  
+if(args && args.validEvent) {  
+$akunDetail1.hide();  
+}  
+}  
+/* ]]>*/  
+  
+    </h:outputScript>  
+      </div>
+    </section>
+  
+              
+
+        <!-- right col -->
+      </div>
+<footer class="main-footer">
+    <div class="pull-right hidden-xs">
+      <b>Version</b> 1
+    </div>
+    <strong>Copyright © 2019 - All Rights Reserved</strong>
+</footer>
+        <!-- jQuery 2.2.3 -->
+<script type="text/javascript" src="jquery/jquery-2.2.3.min.js"></script>
+<!-- jQuery UI 1.11.4 -->
+<script type="text/javascript" src="jquery/jquery-ui.min.js"></script>
+<script type="text/javascript" src="jquery/bootstrap.min.js"></script>
+<script type="text/javascript" src="jquery/app.min.js"></script>
+<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+<script type="text/javascript" src="jquery/pages/dashboard.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script type="text/javascript" src="jquery/demo.js"></script>
+
+<script type="text/javascript" src="jquery/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="jquery/dataTables.bootstrap.min.js"></script>
+        </div>
+    </h:body>
+</html>
+
+

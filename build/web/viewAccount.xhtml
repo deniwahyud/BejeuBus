@@ -1,0 +1,93 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+          <h:form id="form1">    
+  
+              <p:dataTable value="#{akunBean.akuns}" var="akun" paginator="true" rows="5" id="userTable">  
+            <p:column headerText="id" style="text-align: left;">  
+                <h:outputText value="#{akun.idakun}" />  
+            </p:column>  
+            <p:column headerText="Nama">  
+                <h:outputText value="#{akun.nama}" />  
+            </p:column>  
+            <p:column  headerText="Alamat">  
+                <h:outputText value="#{akun.alamat}" />  
+  
+            </p:column>  
+            <p:column headerText="Jenis Kelamin">  
+                <h:outputText value="#{akun.jk}" />  
+            </p:column>  
+  
+            <p:column headerText="Tempat Lahir">  
+                <h:outputText value="#{akun.tempatlahir}" />  
+            </p:column>    
+  
+            <p:column headerText="Tanggal Lahir">  
+                <h:outputText value="#{akun.tanggallahir}" />  
+            </p:column>    
+  
+            <p:column headerText="No Telp">  
+                <h:outputText value="#{akun.notelp}" />  
+            </p:column>    
+  
+            <p:column headerText="Username">  
+                <h:outputText value="#{akun.username}" />  
+            </p:column>    
+  
+            <p:column headerText="Password">  
+                <h:outputText value="#{akun.password}" />  
+            </p:column>  
+            <p:column headerText="Edit" style="text-align: center">  
+                <p:commandButton icon="ui-icon-pencil" id="editUserBtn" value="Edit" ajax="true" actionListener="#{akunBean.changeKomik(akun)}" oncomplete="PF('$userDetail2').show()" update=":userDetail2"/>  
+  
+            </p:column>  
+  
+            <p:column headerText="Delete" style="text-align: center">  
+  
+                <p:commandButton value="Delete" icon="ui-icon-trash" type="button" onclick="PF('confirmDialog').show()" />  
+                <p:confirmDialog message="Are you sure you want to delete this record?Record once deleted can not be retrieved." header="Deleting" severity="alert" widgetVar="confirmDialog">  
+                    <p:commandButton value="Yes Sure" update=":form1:userTable" action="#{akunBean.deleteKomik(akun)}" oncomplete="PF('confirmDialog').hide();" />  
+  
+                    <p:commandButton value="Not Yet" onclick="PF('confirmDialog').hide();" type="button" />  
+                </p:confirmDialog>  
+  
+            </p:column>  
+            <p:rowExpansion>  
+                <h:outputText value="#{user.remark}" styleClass="rowExpansion" />  
+            </p:rowExpansion>  
+        </p:dataTable>  
+    </h:form>
+        <h:outputScript>  
+        
+        </h:outputScript> 
+        <p:dialog id="userDetail2" widgetVar="$userDetail2" header="Update User" hideEffect="explode" appendTo="@(body)" resizable="false" draggable="false" closeOnEscape="true">  
+        <h:form>  
+            <h:inputHidden value="#{akunBean.judul.id}" />  
+            <p:panelGrid columns="2">  
+                <h:outputLabel for="judul" value="Judul: *" />  
+                <p:inputText id="judul" value="#{akunBean.judul.judul}" label="Judul" placeholder="Judul" />  
+  
+                <h:outputLabel for="sinopsis" value="sinopsis" />  
+                <p:inputText id="sinopsis" label="sinopsis" value="#{akunBean.judul.sinopsis}" placeholder="sinopsis" />  
+                
+                 <h:outputLabel for="akun" value="akun" />  
+                 <p:inputText id="akun" label="akun" value="#{akunBean.judul.akun}" placeholder="akun" />  
+  
+                <p:outputLabel for="gambar" value="gambar" />  
+                <p:inputTextarea id="gambar" label="gambar" value="#{akunBean.judul.gambar}" placeholder="gambar" />  
+  
+                <p:commandButton value="Update" ajax="true" icon="ui-icon-disk" update="" actionListener="#{akunBean.UpdateKomik(akunBean.judul)}" oncomplete="handleComplete(xhr, status, args)" />  
+                <p:commandButton value="Cancel" id="cancelButtonId" onclick="handleComplete(xhr, status, args)" />  
+            </p:panelGrid>  
+        </h:form>  
+  
+    </p:dialog>
+    </h:body>
+</html>
+

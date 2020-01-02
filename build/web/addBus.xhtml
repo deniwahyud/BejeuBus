@@ -1,0 +1,150 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Bejeu Admin</title>
+        
+    </h:head>
+    <h:body class="hold-transition skin-blue sidebar-mini">
+        <div class="wrapper">
+
+  <header class="main-header">
+    <!-- Logo -->
+    <a href="dashboard.jsp" class="logo">
+      <!-- mini logo for sidebar mini 50x50 pixels -->
+      <span class="logo-mini">BJU</span>
+      <!-- logo for regular state and mobile devices -->
+      <span class="logo-lg"><b>Bejeu</b>Bus</span>
+    </a>
+    <!-- Header Navbar: style can be found in header.less -->
+    <nav class="navbar navbar-static-top">
+      <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+        <span class="sr-only">Toggle navigation</span>
+      </a>
+      <div class="pull-left">
+      <script language="JavaScript">document.write(tanggallengkap);</script>&nbsp;-&nbsp;<div id="output" class="pull-right"></div>
+      </div>
+      <div class="pull-right">
+                  <a href="login.jsp" onclick="return confirm('Anda yakin ingin logout?')" class="btn btn-danger btn-flat">Sign Out</a>
+                </div>
+    </nav>
+  </header>
+  <!-- Left side column. contains the logo and sidebar -->
+  <aside class="main-sidebar">
+    <!-- sidebar: style can be found in sidebar.less -->
+    <section class="sidebar">
+      <ul class="sidebar-menu"> 
+        <li class="treeview">
+          <a href="dashboard.jsp">
+            <i class="fa fa-home"></i> <span>Home</span>
+            <span class="pull-right-container">
+              <span class="label label-primary pull-right"></span>
+            </span>
+          </a>
+        </li>
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-users"></i>
+            <span>Account</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i></span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="addAccount.xhtml"><i class="fa fa-plus"></i> Add Account</a></li>
+            <li><a href="akun.xhtml"><i class="fa fa-user"></i> Data Account</a></li>
+          </ul>
+        </li>
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-users"></i>
+            <span>Bus</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i></span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="addBus.xhtml"><i class="fa fa-plus"></i> Add Bus</a></li>
+            <li><a href="viewBus.xhtml"><i class="fa fa-user"></i> Data Bus</a></li>
+          </ul>
+        </li>
+        <li class="treeview">
+          <a href="viewContact.xhtml">
+            <i class="fa fa-globe"></i>
+            <span>ContactUs</span>
+          </a>
+        </li>
+      </ul>
+    </section>
+    <!-- /.sidebar -->
+  </aside>
+
+  <!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1 class="page-header">
+        Data Account
+      </h1>
+      <ul class="breadcrumb">
+        <li><a href="home"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li class="active">Data Account</li>
+      </ul>
+    </section>
+    <section class="content">
+      <div class="container-fluid">
+       
+        <h:form> 
+            
+                <h:outputLabel for="namaBis" value="Nama Bis: *" />  <br/>
+                <p:inputText id="nama_bis" value="#{bisBean.newuser.namaBis}" label="Bus Name" placeholder="Bus Name" />  
+  <br/>
+                <h:outputLabel for="karoseri" value="Caroserie: *" />  <br/>
+                <p:inputText id="karoseri" value="#{bisBean.newuser.karoseri}" label="Name" placeholder="Caroseri" />  
+  <br/>
+                <h:outputLabel for="merkMesin" value="Chassis: *" />  <br/>
+                <p:inputText id="merk_mesin" value="#{bisBean.newuser.merkMesin}" label="Major" placeholder="Chassis" />
+                <br/>
+                <h:outputLabel for="warna" value="Warna: *" />  <br/>
+                <p:inputText id="warna" value="#{bisBean.newuser.warna}" label="Kelas" placeholder="Color" />
+                <br/>
+                <p:outputLabel for="kapasitas" value="Kapasitas: *" />  <br/>
+                <p:inputText id="kapasitas" label="Suggestion" value="#{bisBean.newuser.kapasitas}" placeholder="Capacity" />  
+  <br/>
+  <p:commandButton value="add" process="@form" id="AddButtonId" ajax="true" icon="ui-icon-plus" actionListener="#{bisBean.addBis()}" oncomplete="PF('$bisDetail1').hide()" />  
+  
+                <p:commandButton id="cancelAddButtonId" value="Cancel" onclick="handleComplete(xhr, status, args)" />  
+            
+        </h:form>  
+           <h:outputScript>  
+        /* 
+        <![CDATA[ */  
+function handleComplete(xhr, status, args) {  
+if(args && args.validEvent) {  
+$bisDetail1.hide();  
+}  
+}  
+/* ]]>*/  
+  
+    </h:outputScript>  
+      </div>
+    </section>
+  
+              
+
+        <!-- right col -->
+      </div>
+<footer class="main-footer">
+    <div class="pull-right hidden-xs">
+      <b>Version</b> 1
+    </div>
+    <strong>Copyright © 2019 - All Rights Reserved</strong>
+</footer>
+     
+        </div>
+    </h:body>
+</html>
+
+

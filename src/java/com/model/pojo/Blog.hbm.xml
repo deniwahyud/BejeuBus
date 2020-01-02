@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 3, 2019 2:08:48 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.model.pojo.Blog" table="blog" catalog="bmc" optimistic-lock="version">
+        <id name="idBlog" type="java.lang.Integer">
+            <column name="id_blog" />
+            <generator class="identity" />
+        </id>
+        <property name="lokasi" type="string">
+            <column name="lokasi" length="100" not-null="true" />
+        </property>
+        <property name="judul" type="string">
+            <column name="judul" length="100" not-null="true" />
+        </property>
+        <property name="tanggal" type="date">
+            <column name="tanggal" length="10" not-null="true" />
+        </property>
+        <property name="isi" type="string">
+            <column name="isi" length="65535" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 3, 2019 2:08:48 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.model.pojo.Galeri" table="galeri" catalog="bmc" optimistic-lock="version">
+        <id name="idGambar" type="java.lang.Integer">
+            <column name="id_gambar" />
+            <generator class="identity" />
+        </id>
+        <property name="picture" type="string">
+            <column name="picture" length="20" not-null="true" />
+        </property>
+        <property name="caption" type="string">
+            <column name="caption" length="30" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

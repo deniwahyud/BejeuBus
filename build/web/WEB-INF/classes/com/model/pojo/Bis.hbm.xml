@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 3, 2019 2:08:48 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.model.pojo.Bis" table="bis" catalog="bmc" optimistic-lock="version">
+        <id name="idBis" type="java.lang.Integer">
+            <column name="id_bis" />
+            <generator class="identity" />
+        </id>
+        <property name="namaBis" type="string">
+            <column name="nama_bis" length="30" not-null="true" />
+        </property>
+        <property name="karoseri" type="string">
+            <column name="karoseri" length="30" not-null="true" />
+        </property>
+        <property name="merkMesin" type="string">
+            <column name="merk_mesin" length="30" not-null="true" />
+        </property>
+        <property name="warna" type="string">
+            <column name="warna" length="30" not-null="true" />
+        </property>
+        <property name="kapasitas" type="int">
+            <column name="kapasitas" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

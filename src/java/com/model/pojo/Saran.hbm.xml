@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 3, 2019 2:08:48 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.model.pojo.Saran" table="saran" catalog="bmc" optimistic-lock="version">
+        <id name="idSaran" type="java.lang.Integer">
+            <column name="id_saran" />
+            <generator class="identity" />
+        </id>
+        <property name="nama" type="string">
+            <column name="nama" length="30" not-null="true" />
+        </property>
+        <property name="email" type="string">
+            <column name="email" length="30" not-null="true" />
+        </property>
+        <property name="subjek" type="string">
+            <column name="subjek" length="30" not-null="true" />
+        </property>
+        <property name="pesan" type="string">
+            <column name="pesan" length="65535" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

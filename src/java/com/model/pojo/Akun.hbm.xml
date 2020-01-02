@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 3, 2019 2:08:48 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.model.pojo.Akun" table="akun" catalog="bmc" optimistic-lock="version">
+        <id name="idAkun" type="java.lang.Integer">
+            <column name="id_akun" />
+            <generator class="identity" />
+        </id>
+        <property name="nama" type="string">
+            <column name="nama" length="30" not-null="true" />
+        </property>
+        <property name="alamat" type="string">
+            <column name="alamat" length="65535" not-null="true" />
+        </property>
+        <property name="jk" type="string">
+            <column name="jk" length="12" not-null="true" />
+        </property>
+        <property name="tempatLahir" type="string">
+            <column name="tempat_lahir" length="20" not-null="true" />
+        </property>
+        <property name="tanggalLahir" type="date">
+            <column name="tanggal_lahir" length="10" not-null="true" />
+        </property>
+        <property name="noTelp" type="string">
+            <column name="no_telp" length="12" not-null="true" />
+        </property>
+        <property name="username" type="string">
+            <column name="username" length="10" not-null="true" />
+        </property>
+        <property name="password" type="string">
+            <column name="password" length="8" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>
